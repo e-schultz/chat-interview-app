@@ -7,14 +7,20 @@ export default props => (
     sx={{
       display: 'flex',
       flexDirection: 'column',
-      minHeight: '100vh'
+      minHeight: '100vh',
+      maxHeight: '10vh'
     }}
   >
     <ChatHeader>FieldChat</ChatHeader>
     <main
       sx={{
-        width: '100%',
-        flex: '1 1 auto'
+        background: 'white',
+        flexGrow: 1,
+
+        overflow: 'auto',
+        maxHeight: '90vh',
+        /* for Firefox */
+        minHeight: 0
       }}
     >
       {props.children}

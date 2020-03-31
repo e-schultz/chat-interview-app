@@ -1,18 +1,6 @@
 /** @jsx jsx */
 import { useState } from 'react';
-import {
-  jsx,
-  Label,
-  Input,
-  Select,
-  Textarea,
-  Radio,
-  Checkbox,
-  Slider,
-  Button,
-  Flex,
-  Box
-} from 'theme-ui';
+import { jsx, Label, Input, Button, Flex, Box } from 'theme-ui';
 export default props => {
   const [message, setMessage] = useState('');
   const handleSubmit = evt => {
@@ -21,7 +9,7 @@ export default props => {
     setMessage('');
   };
   return (
-    <Flex as="form" onSubmit={handleSubmit}>
+    <Flex as="form" onSubmit={handleSubmit} bg="primary">
       <Box p={2} sx={{ flex: '1 1 auto' }}>
         <Label htmlFor="message">message</Label>
         <Input
