@@ -14,7 +14,7 @@ export default props => {
     >
       {props.messages.map(message => (
         <MessageListItem key={message.id} id={`message-${message.id}`}>
-          {message.text} - {message.id}
+          {message.text}
         </MessageListItem>
       ))}
     </Box>
