@@ -1,25 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { ThemeProvider, Container, Box } from 'theme-ui';
+import AppLayout from './lib/components/AppLayout';
+
+import theme from './theme';
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <AppLayout p={4} bg="muted">
+        <Box>I'm in a box</Box>
+      </AppLayout>
+    </ThemeProvider>
   );
 }
 
