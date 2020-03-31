@@ -11,16 +11,19 @@ export default props => {
   return (
     <Flex as="form" onSubmit={handleSubmit} bg="primary">
       <Box p={2} sx={{ flex: '1 1 auto' }}>
-        <Label htmlFor="message">message</Label>
+        <Label htmlFor="message" color="white">
+          message
+        </Label>
         <Input
           name="message"
           value={message}
+          bg="white"
           onChange={evt => setMessage(evt.target.value)}
           mb={3}
         />
       </Box>
-      <Box p={2} bg="muted">
-        <Button>Submit</Button>
+      <Box p={2}>
+        <Button>Send</Button>
       </Box>
     </Flex>
   );
