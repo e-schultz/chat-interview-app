@@ -1,25 +1,26 @@
 /** @jsx jsx */
 // initial from recipes in theme-ui docs - https://theme-ui.com/recipes/flexbox-layout
 import { jsx } from 'theme-ui';
+import ChatHeader from './ChatHeader';
 export default props => (
   <div
     sx={{
       display: 'flex',
       flexDirection: 'column',
-      minHeight: '100vh'
+      minHeight: '100vh',
+      maxHeight: '10vh'
     }}
   >
-    <header
-      sx={{
-        width: '100%'
-      }}
-    >
-      Header
-    </header>
+    <ChatHeader>FieldChat</ChatHeader>
     <main
       sx={{
-        width: '100%',
-        flex: '1 1 auto'
+        background: 'white',
+        flexGrow: 1,
+
+        overflow: 'auto',
+        maxHeight: '90vh',
+        /* for Firefox */
+        minHeight: 0
       }}
     >
       {props.children}
@@ -29,7 +30,7 @@ export default props => (
         width: '100%'
       }}
     >
-      Footer
+      {props.footer}
     </footer>
   </div>
 );
